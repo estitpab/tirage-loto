@@ -1,0 +1,10 @@
+.LotoDraw {
+  display: flex;
+  justify-content: space-around;
+  max-width: 900px;
+  margin: 20px;
+
+  @media screen and (min-width: 900px) {
+    margin: auto;
+  }
+}

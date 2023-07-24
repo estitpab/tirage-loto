@@ -1,0 +1,56 @@
+/* Variables */
+$primary_color: rgb(79, 185, 255);
+$secondary_color: rgb(255, 47, 134);
+
+/* Placeholder */
+%flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%inner_ball {
+  position: absolute;
+  content: '';
+  background: white;
+  width: 60%;
+  padding: 30% 0;
+  line-height: 0;
+  border-radius: 50%;
+  font-size: 4vw;
+
+  @media screen and (min-width: 900px) {
+    font-size: (40/16) + rem;
+  }
+}
+
+/* Mixin */
+@mixin ball_gradient($base_color) {
+  background: $base_color
+    radial-gradient(circle at 35% 35%, rgba(white, 0.4), rgba(black, 0.4));
+}
+
+/* Animation */
+@keyframes bounce {
+  10% {
+    opacity: 1;
+    transform: translateY(230px);
+  }
+  20% {
+    transform: translateY(130px);
+  }
+  30% {
+    transform: translateY(210px);
+  }
+  40% {
+    transform: translateY(190px);
+  }
+  50% {
+    transform: translateY(210px);
+  }
+  70%,
+  100% {
+    opacity: 1;
+    transform: translateY(200px);
+  }
+}

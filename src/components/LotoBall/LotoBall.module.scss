@@ -1,0 +1,38 @@
+@import '../../sass/utils.scss';
+
+.lotoBall {
+  @extend %flex_center;
+  @include ball_gradient($primary_color);
+  transform: translateY(-200px);
+  animation: bounce 1s ease-out forwards;
+  position: relative;
+  width: 15%;
+  padding-top: 15%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+
+  &:after {
+    @extend %inner_ball;
+    top: -45%;
+  }
+
+  &:before {
+    @extend %inner_ball;
+    left: -45%;
+    top: 25%;
+  }
+
+  &.luck {
+    @include ball_gradient($secondary_color);
+  }
+
+  .number {
+    @extend %flex_center;
+    @extend %inner_ball;
+    top: 25%;
+    left: 25%;
+  }
+}
